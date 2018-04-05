@@ -496,30 +496,31 @@
         <div>
             <div class="ng-cloak" ng-cloak="">
                 <div id="imageViewer" ng-controller="imageViewerCtrl" image-viewer="">
-                    <img id="subjectImage" subject-image="" zoom-pan-image="" class="subject-image" ng-src="{{selectedThumb.imageUrl}}" alt="Subject image">
-                    <a class="first-item item-navigation" title="View first image" ng-click="$event.preventDefault();gotoFirstItem()"></a>
-                    <a title="View previous image" class="previous-item item-navigation" ng-click="$event.preventDefault();gotoPreviousItem()"></a>
-                    <a title="View next image" class="next-item item-navigation" ng-click="$event.preventDefault();gotoNextItem()"></a>
-                    <a class="last-item item-navigation" title="View last image" ng-click="$event.preventDefault();gotoLastItem()"></a>
-                    <div class="clr"></div>
-                    <div id="thumbPanel" thumb-list="">
-                        <div class="lipped">
-                            <div class="thumb-item" ng-repeat="thumb in thumbImages | startFrom:currentPageIndex*thumbsPerPage | limitTo:thumbsPerPage">
-                                <a title="View full size image" href="http://discovery.nationalarchives.gov.uk/details/r/%7B%7Bthumb.id%7D%7D" ng-click="$event.preventDefault()">
-                                    <img alt="Thumb item {{thumb.id}}" class="thumb" thumb-item="" ng-click="selectThumb(thumb)" ng-class="{selected : thumb.isSelected}" ng-src="{{supportsDataUri ? 'data:image/jpg;base64,' + thumb.thumbStream : thumb.thumbUrl }}">
-                                </a>
-                            </div>
+                    <img src="src/image-viewer-placeholder.jpg" width="100%">
+                    <!--<img id="subjectImage" subject-image="" zoom-pan-image="" class="subject-image" ng-src="{{selectedThumb.imageUrl}}" alt="Subject image">-->
+                    <!--<a class="first-item item-navigation" title="View first image" ng-click="$event.preventDefault();gotoFirstItem()"></a>-->
+                    <!--<a title="View previous image" class="previous-item item-navigation" ng-click="$event.preventDefault();gotoPreviousItem()"></a>-->
+                    <!--<a title="View next image" class="next-item item-navigation" ng-click="$event.preventDefault();gotoNextItem()"></a>-->
+                    <!--<a class="last-item item-navigation" title="View last image" ng-click="$event.preventDefault();gotoLastItem()"></a>-->
+                    <!--<div class="clr"></div>-->
+                    <!--<div id="thumbPanel" thumb-list="">-->
+                        <!--<div class="lipped">-->
+                            <!--<div class="thumb-item" ng-repeat="thumb in thumbImages | startFrom:currentPageIndex*thumbsPerPage | limitTo:thumbsPerPage">-->
+                                <!--<a title="View full size image" href="http://discovery.nationalarchives.gov.uk/details/r/%7B%7Bthumb.id%7D%7D" ng-click="$event.preventDefault()">-->
+                                    <!--<img alt="Thumb item {{thumb.id}}" class="thumb" thumb-item="" ng-click="selectThumb(thumb)" ng-class="{selected : thumb.isSelected}" ng-src="{{supportsDataUri ? 'data:image/jpg;base64,' + thumb.thumbStream : thumb.thumbUrl }}">-->
+                                <!--</a>-->
+                            <!--</div>-->
 
-                            <span ng-show="thumbDataLoaded &amp;&amp; getTotalPages() &gt; 1" class="pagination-label">
-                                Image&nbsp;
-                                <select ng-options="n as n + 1 for n in [] | range:thumbImages.length" ng-change="updateImageSelect()" ng-model="currentItemIndex"></select>
-                                &nbsp;of {{thumbImages.length}}
-                            </span>
-                            <a title="Go to previous page" ng-click="$event.preventDefault();gotoPreviousPage()" class="prev-page pagination" ng-class="{disabled: thumbImages.length &gt; thumbsPerPage &amp;&amp; currentPageIndex === 0 }" ng-hide="thumbImages.length &lt;= thumbsPerPage"></a>
-                            <a title="Go to next page" ng-click="$event.preventDefault();gotoNextPage()" class="next-page pagination" ng-hide="currentPageIndex &gt;= thumbImages.length/thumbsPerPage - 1"></a>
-                        </div>
-                    </div>
-                    <img id="{{loadingImageId}}" class="loading-image" ng-src="{{templateBaseUrl}}images/ajax-loader.gif" alt="Loading image ...">
+                            <!--<span ng-show="thumbDataLoaded &amp;&amp; getTotalPages() &gt; 1" class="pagination-label">-->
+                                <!--Image&nbsp;-->
+                                <!--<select ng-options="n as n + 1 for n in [] | range:thumbImages.length" ng-change="updateImageSelect()" ng-model="currentItemIndex"></select>-->
+                                <!--&nbsp;of {{thumbImages.length}}-->
+                            <!--</span>-->
+                            <!--<a title="Go to previous page" ng-click="$event.preventDefault();gotoPreviousPage()" class="prev-page pagination" ng-class="{disabled: thumbImages.length &gt; thumbsPerPage &amp;&amp; currentPageIndex === 0 }" ng-hide="thumbImages.length &lt;= thumbsPerPage"></a>-->
+                            <!--<a title="Go to next page" ng-click="$event.preventDefault();gotoNextPage()" class="next-page pagination" ng-hide="currentPageIndex &gt;= thumbImages.length/thumbsPerPage - 1"></a>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<img id="{{loadingImageId}}" class="loading-image" ng-src="{{templateBaseUrl}}images/ajax-loader.gif" alt="Loading image ...">-->
                 </div>
             </div>
         </div>
