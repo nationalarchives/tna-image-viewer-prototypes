@@ -77,7 +77,7 @@
     <link href="http://discovery.nationalarchives.gov.uk/Content/images/apple-touch-icon.png" rel="apple-touch-icon">
 <style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak{display:none;}ng\:form{display:block;}
 
-.cookieNotice{
+.cookieNotice,  #staffViewOfOtherUserDOsWrapper{
     display:none !important;
 }
 </style></head>
@@ -491,7 +491,8 @@
 
 <div class="viewer-message">
     <h2 class="hidden-but-accessible">Image viewer</h2>
-    <p>This record is available to view with our image viewer. <a id="imageViewerLink" href="#imageViewerLink" role="button">Show images</a></p>
+    <p>
+        <a id="imageViewerLink" href="#imageViewerLink" role="button">Preview this record</a></p>
 </div>
     <div id="imageViewerApp">
         <div>
@@ -939,7 +940,7 @@ src="http://smartsource.nationalarchives.gov.uk/dcsdhhxq6000004rry7ab39or_9h9r/n
     
     <script src="src/jquery.js"></script>
     <script src="src/jquery_002.js"></script>
-    <script src="src/details.js"></script>
+    <script src="src/details-preview.js"></script>
     <script src="src/webtrends-details-page.js"></script>
 
         <!--[if lt IE 9]>
